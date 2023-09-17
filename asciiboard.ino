@@ -65,7 +65,7 @@ uint8_t keyGui[] = {
   0b11011,
   0b00000,
   0b00000,
-}
+};
 // LCD object
 LiquidCrystal lcd(PIN_LCD_RS, PIN_LCD_EN, PIN_LCD_D4, PIN_LCD_D5, PIN_LCD_D6, PIN_LCD_D7);
 
