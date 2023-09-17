@@ -115,6 +115,7 @@ void scancodeDisplay() {
     case 0x90: lcd.print("\x02\x43"); break;
     case 0x91: lcd.print((char) 2); lcd.print((char) 0); break;
     case 0x92: lcd.print("\x02\x41"); break;
+    case 0x93: lcd.print("\x02\x03"); break;
     default: {
       if (curByte < 32) {
         lcd.print('^');
@@ -144,6 +145,7 @@ void scancodeDisplay() {
   lcd.print((modStatus & MOD_CTRL)? 'C' : ' ');
   lcd.print((modStatus & MOD_SHIFT)? '\x00' : ' ');
   lcd.print((modStatus & MOD_ALT)? 'A' : ' ');
+  lcd.print((modStatus & MOD_GUI)? '\x03' : ' ');
 
 	delay(10);
 }
@@ -243,6 +245,7 @@ void setup() {
   lcd.createChar(0, arrowUp);
   lcd.createChar(1, arrowDown);
   lcd.createChar(2, modifier);
+  lcd.createChar(3, keyGui);
   // sta
 	Serial.begin(9600);
 	Keyboard.begin();
